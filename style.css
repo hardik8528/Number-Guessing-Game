@@ -4,7 +4,7 @@ nav h3{
 
 #head{
     font-size: 90px;
-    color: rgb(108,117,125);
+    color: #5A6268;
     font-family: sans-serif;
 }
 
@@ -18,3 +18,17 @@ nav h3{
     margin: 0 auto;
 }
 
+.won{
+    background-color: #6C757D;
+    color: white;
+}
+
+.warning{
+    background-color: #343A40;
+    color: white;
+}
+
+.list{
+    background-color: #343A40;
+    color: white;
+}

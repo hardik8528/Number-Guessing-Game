@@ -1,23 +1,23 @@
-let correctNum = getRandom()
+let correctNum = getRandomNumber();
 
-let guesses = []
+let GuessesList = [];
 
 window.onload = function () {
-    document.getElementById("check").addEventListener("click", playgame)
-    document.getElementById("restart").addEventListener("click", initgame)
+    document.getElementById("check").addEventListener("click", playgame);
+    document.getElementById("restart").addEventListener("click", initgame);
 }
 
 function playgame() {
-    let numberGuess = document.getElementById('guess').value;
-    console.log(numberGuess)
-    displayResult(numberGuess);
-    saveGuessHistory(numberGuess);
+    let GuessedNumber = document.getElementById('guess').value;
+    console.log(GuessedNumber);
+    displayResult(GuessedNumber);
+    saveGuessHistory(GuessedNumber);
     displayHistory();
 }
 
-function getRandom() {
-    let num = (Math.floor(Math.random() * 100)) + 1
-    return num
+function getRandomNumber() {
+    let RandomNumber = (Math.floor(Math.random() * 100)) + 1;
+    return RandomNumber;
 }
 
 function displayResult(numberGuess) {
@@ -34,53 +34,53 @@ function getDialog(dialogType, text) {
     let dia
     switch (dialogType) {
         case "warning":
-            dia = '<div class="alert alert-warning mt-3" role="alert">' + text + "</div>"
-            break
+            dia = '<div class="alert warning mt-3" role="alert">' + text + "</div>";
+            break;
         case "won":
-            dia = '<div class="alert alert-info mt-3" role="alert">' + text + "</div>"
-            break
+            dia = '<div class="alert won mt-3" role="alert">' + text + "</div>";
+            break;
 
         default:
-            break
+            break;
     }
    
-    return dia
+    return dia;
 }
 
 function showAbove() {
-    const text = "Your Guess Is Too High !!"
-    insruction = getDialog("warning", text)
-    document.getElementById("result").innerHTML = insruction
+    const text = "Your Guess Is Too High !!";
+    insruction = getDialog("warning", text);
+    document.getElementById("result").innerHTML = insruction;
 }
 
 function showBelow() {
-    const text = "Your Guess Is Too Low !!"
-    insruction = getDialog("warning", text)
-    document.getElementById("result").innerHTML = insruction
+    const text = "Your Guess Is Too Low !!";
+    insruction = getDialog("warning", text);
+    document.getElementById("result").innerHTML = insruction;
 }
 
 function showWin() {
-    const text = "Awesome job,You Got It!!"
-    insruction = getDialog("won", text)
-    document.getElementById("result").innerHTML = insruction
+    const text = "Awesome job,You Got It!!";
+    insruction = getDialog("won", text);
+    document.getElementById("result").innerHTML = insruction;
 }
 
 function saveGuessHistory(numberGuess){
-    guesses.unshift(numberGuess)
+    GuessesList.unshift(numberGuess);
 }
 
 function displayHistory(){
-    let historyText = '<ul class="list-group">'
-    for (let i = 0; i < guesses.length; i++) {
-        historyText += '<li class="list-group-item list-group-item-dark mt-1"> You Guessed ' + guesses[i] + '</li>'
+    let historyText = '<ul class="list-group">';
+    for (let i = 0; i < GuessesList.length; i++) {
+        historyText += '<li class="list-group-item list mt-1"> You Guessed ' + GuessesList[i] + '</li>';
     }
-    historyText += '</ul>'
-    document.getElementById("history").innerHTML = historyText
+    historyText += '</ul>';
+    document.getElementById("history").innerHTML = historyText;
 }
 
 function initgame(){
-    correctNum = getRandom();
-    document.getElementById("history").innerHTML = ""
-    document.getElementById("result").innerHTML = ""
-    guesses = []
+    correctNum = getRandomNumber();
+    document.getElementById("history").innerHTML = "";
+    document.getElementById("result").innerHTML = "";
+    GuessesList = [];
 }
