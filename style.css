@@ -1,0 +1,20 @@
+nav h3{
+    color: white;
+}
+
+#head{
+    font-size: 90px;
+    color: rgb(108,117,125);
+    font-family: sans-serif;
+}
+
+#guess{
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+#result,#history{
+    max-width: 400px;
+    margin: 0 auto;
+}
+
