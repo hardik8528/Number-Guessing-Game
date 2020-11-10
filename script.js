@@ -83,4 +83,5 @@ function initgame(){
     document.getElementById("history").innerHTML = "";
     document.getElementById("result").innerHTML = "";
     GuessesList = [];
+    document.getElementById('guess').value = ""
 }
