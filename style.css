@@ -32,3 +32,15 @@ nav h3{
     background-color: #FFFFFF;
     color: black;
 }
+
+footer {
+    min-height: 57.6px;
+    background-color: #dfecfa70;
+    color: #929eaa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    font-size: 14px;
+    font-weight: bold;
+}
